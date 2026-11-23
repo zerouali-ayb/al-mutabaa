@@ -1,7 +1,7 @@
 /* Service Worker — المتابعة التربوية. يُولَّد الإصدار وقائمة الملفات أثناء البناء. */
-const VERSION = '3cbe81b941cc';
+const VERSION = '006bf751ec7c';
 const CACHE = `mutabaa-${VERSION}`;
-const FILES = ["./","app.css","app.js","bg.js","fonts/OFL.txt","fonts/amiri.woff","fonts/noto-naskh.woff","icon-192.png","icon-512-maskable.png","icon-512.png","index.html","issuer.html","manifest.webmanifest","pdf.worker.min.js"];
+const FILES = ["./","app.css","app.js","bg.js","fonts/OFL.txt","fonts/amiri.woff","fonts/noto-naskh.woff","icon-192.png","icon-512-maskable.png","icon-512.png","index.html","issuer.html","manifest.webmanifest","pdf.worker.min.js","privacy.html"];
 
 self.addEventListener('install', (event) => {
   // تحديث تلقائي: الإصدار الجديد يتولى فور تخزينه (البيانات في IndexedDB لا تتأثر)
