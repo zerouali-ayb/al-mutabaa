@@ -1,6 +1,8 @@
 /* Service Worker — المتابعة التربوية. يُولَّد الإصدار وقائمة الملفات أثناء البناء. */
-const VERSION = 'b4e71b12dd73';
-const CACHE = `mutabaa-${VERSION}`;
+const VERSION = 'c9270f95f4f3';
+const PREFIX = 'mutabaa-'; // النسخة الأصلية والتجريبية على الموقع نفسه: لكل منهما ذاكرتها
+const CACHE = `${PREFIX}${VERSION}`;
+const mine = (k) => k.startsWith(PREFIX) && (PREFIX !== 'mutabaa-' || !k.startsWith('mutabaa-beta-'));
 const FILES = ["./","app.css","app.js","bg.js","fonts/OFL.txt","fonts/amiri.woff","fonts/noto-naskh.woff","icon-192.png","icon-512-maskable.png","icon-512.png","index.html","issuer.html","manifest.webmanifest","pdf.worker.min.js","privacy.html"];
 
 self.addEventListener('install', (event) => {
@@ -10,7 +12,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
-    for (const key of await caches.keys()) if (key !== CACHE) await caches.delete(key);
+    for (const key of await caches.keys()) if (key !== CACHE && mine(key)) await caches.delete(key);
     await self.clients.claim();
   })());
 });
