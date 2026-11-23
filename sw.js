@@ -1,5 +1,5 @@
 /* Service Worker — المتابعة التربوية. يُولَّد الإصدار وقائمة الملفات أثناء البناء. */
-const VERSION = '006bf751ec7c';
+const VERSION = 'b4e71b12dd73';
 const CACHE = `mutabaa-${VERSION}`;
 const FILES = ["./","app.css","app.js","bg.js","fonts/OFL.txt","fonts/amiri.woff","fonts/noto-naskh.woff","icon-192.png","icon-512-maskable.png","icon-512.png","index.html","issuer.html","manifest.webmanifest","pdf.worker.min.js","privacy.html"];
 
